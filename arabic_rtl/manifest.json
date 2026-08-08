@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Arab RTL",
+  "version": "1.0.0",
+  "description": "Automatic Arabic Reading Assistant. Enhances RTL direction, typography, and mixed text seamlessly across all websites.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background/index.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "src/content/styles.css"
+      ],
+      "js": [
+        "src/core/config.js",
+        "src/core/logger.js",
+        "src/rules/ignore.rules.js",
+        "src/rules/sites.rules.js",
+        "src/engines/language-detector.js",
+        "src/managers/performance-manager.js",
+        "src/managers/cache-manager.js",
+        "src/managers/dom-manager.js",
+        "src/managers/style-manager.js",
+        "src/engines/rtl-engine.js",
+        "src/engines/rule-engine.js",
+        "src/plugins/plugin-loader.js",
+        "src/plugins/punctuation.js",
+        "src/plugins/mixed-text.js",
+        "src/content/app.js",
+        "src/content/index.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "src/ui/popup/popup.html",
+    "default_icon": {
+      "16": "src/assets/icons/icon16.png",
+      "48": "src/assets/icons/icon48.png",
+      "128": "src/assets/icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/ui/settings/settings.html",
+    "open_in_tab": true
+  },
+  "icons": {
+  "16": "src/assets/icons/icon16.png",
+  "48": "src/assets/icons/icon48.png",
+  "128": "src/assets/icons/icon128.png"
+}
+}

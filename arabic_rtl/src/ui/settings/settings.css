@@ -1,0 +1,140 @@
+/**
+ * @file settings.css
+ * @description Specific styling for the Arab RTL settings page.
+ * Implements iOS/macOS style grouped lists.
+ */
+
+body {
+  background-color: var(--color-bg-base);
+  /* Dark textured background pattern for a premium feel */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 255, 65, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(28, 28, 30, 0.8) 0px, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.settings-layout {
+  width: 100%;
+  max-width: 600px; /* Optimal reading width */
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header */
+.settings-header {
+  align-items: center;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-neon);
+  flex-shrink: 0;
+}
+
+.logo-wrapper svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Grouped Lists (Apple Style) */
+.group-title {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures child elements don't break the border radius */
+}
+
+.master-switch {
+  border-color: var(--color-primary-dim);
+  box-shadow: 0 4px 20px rgba(0, 255, 65, 0.1);
+}
+
+.setting-item {
+  padding: var(--spacing-md) var(--spacing-lg);
+  align-items: center;
+  transition: background-color var(--anim-fast);
+}
+
+.setting-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 80%;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.block-text {
+  display: block;
+  line-height: 1.4;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: calc(100% - var(--spacing-lg) * 2); /* Indented divider */
+  margin: 0 auto;
+}
+
+/* Footer & Status */
+.settings-footer {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  align-items: center;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+}
+
+.icon-sm svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hover-white:hover {
+  color: var(--color-text-primary);
+}
+
+.save-status {
+  color: var(--color-primary);
+  opacity: 1;
+  transition: opacity var(--anim-smooth);
+}
+
+.save-status.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,212 @@
+/**
+ * @file design-system.css
+ * @description Core UI Design System for Arab RTL.
+ * Implements Apple-style Glassmorphism, Dark Theme, and Neon Green accents.
+ */
+
+:root {
+  /* Colors */
+  --color-bg-base: #000000;
+  --color-glass: rgba(28, 28, 30, 0.65);
+  --color-glass-hover: rgba(44, 44, 46, 0.8);
+  --color-primary: #00FF41; /* Neon Green */
+  --color-primary-dim: rgba(0, 255, 65, 0.15);
+  --color-text-primary: #F5F5F7; /* Apple White */
+  --color-text-secondary: #86868B; /* Apple Gray */
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-md: 15px;
+  --font-size-lg: 18px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  /* Border Radius (Apple Style) */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows & Effects (Blur) */
+  --shadow-glass: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --shadow-neon: 0 0 12px rgba(0, 255, 65, 0.4);
+  --blur-strength: blur(20px);
+
+  /* Micro Animations */
+  --anim-fast: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --anim-smooth: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  user-select: none; /* Prevent accidental text selection in UI */
+}
+
+/* Glassmorphism Panel (Cards) */
+.glass-panel {
+  background: var(--color-glass);
+  backdrop-filter: var(--blur-strength);
+  -webkit-backdrop-filter: var(--blur-strength);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Typography Classes */
+.text-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.text-body {
+  font-size: var(--font-size-md);
+  font-weight: 400;
+}
+
+.text-muted {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all var(--anim-fast);
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-dim);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-neon);
+  background-color: rgba(0, 255, 65, 0.25);
+}
+
+.btn-icon {
+  background: transparent;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+}
+
+.btn-icon:hover {
+  background: var(--color-glass-hover);
+  color: var(--color-text-primary);
+}
+
+/* Apple-style Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: var(--anim-smooth);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 1px;
+  bottom: 1px;
+  background-color: var(--color-text-primary);
+  transition: var(--anim-smooth);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-neon);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+  background-color: var(--color-bg-base); /* Dark contrast against neon */
+}
+
+/* Status Indicator (Pulsing Dot) */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-neon);
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+  animation: pulse 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Flexbox Utilities */
+.flex-row { display: flex; align-items: center; }
+.space-between { justify-content: space-between; }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }

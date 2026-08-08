@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arab RTL Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/design-system.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-layout">
+    
+    <!-- Header -->
+    <header class="settings-header flex-row gap-md">
+      <div class="logo-wrapper" id="logo-container">
+        <!-- Logo SVG injected here -->
+      </div>
+      <div>
+        <h1 class="text-title">Arab RTL Settings</h1>
+        <p class="text-muted">Customize your reading experience</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="settings-content">
+      
+      <!-- Main Toggle (Master Switch) -->
+      <div class="glass-panel setting-group master-switch">
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Enable Extension</span>
+            <span class="text-muted block-text">Turn off to temporarily disable all features</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="enableExtension">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Core Features Group -->
+      <h2 class="group-title text-muted">Core Features</h2>
+      <div class="glass-panel setting-group">
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Improve Arabic Direction</span>
+            <span class="text-muted block-text">Automatically apply Right-to-Left (RTL) direction to Arabic text</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="improveArabicDirection">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="divider"></div>
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Improve Mixed Text</span>
+            <span class="text-muted block-text">Fix English words and numbers layout inside Arabic sentences</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="improveMixedText">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="divider"></div>
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Improve Punctuation</span>
+            <span class="text-muted block-text">Convert Latin commas and question marks to proper Arabic ones</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="improvePunctuation">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- HTML Elements Group -->
+      <h2 class="group-title text-muted">Document Elements</h2>
+      <div class="glass-panel setting-group">
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Improve Lists</span>
+            <span class="text-muted block-text">Fix bullet points and numbering alignment</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="improveLists">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="divider"></div>
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Improve Tables</span>
+            <span class="text-muted block-text">Correct table columns direction for Arabic content</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="improveTables">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Appearance & System Group -->
+      <h2 class="group-title text-muted">Appearance & System</h2>
+      <div class="glass-panel setting-group">
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Alexandria Font</span>
+            <span class="text-muted block-text">Use premium Arabic typography for better readability</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="useAlexandriaFont">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="divider"></div>
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Auto Detection</span>
+            <span class="text-muted block-text">Smartly detect languages without manual intervention</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="autoDetection">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="divider"></div>
+        <div class="setting-item flex-row space-between">
+          <div class="setting-info">
+            <span class="text-body font-medium">Dark Theme</span>
+            <span class="text-muted block-text">Match extension UI to dark mode</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="darkTheme">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Footer Actions -->
+      <footer class="settings-footer flex-row space-between">
+        <button id="restore-btn" class="btn btn-icon flex-row gap-sm text-muted hover-white">
+          <span class="icon-sm" id="restore-icon"></span>
+          Restore Defaults
+        </button>
+        <div id="save-status" class="save-status flex-row gap-xs hidden">
+          <span class="icon-sm" id="check-icon"></span>
+          <span class="text-body">Saved</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../shared/icons.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

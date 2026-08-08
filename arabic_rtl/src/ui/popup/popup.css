@@ -1,0 +1,124 @@
+/**
+ * @file popup.css
+ * @description Specific styling for the Arab RTL popup window.
+ * Inherits variables from design-system.css.
+ */
+
+body {
+  width: 320px;
+  margin: 0;
+  /* Ensure no scrollbars appear in the Chrome extension popup */
+  overflow: hidden; 
+}
+
+.popup-container {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Header Section */
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.logo-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary); /* Neon Green Icon */
+  box-shadow: var(--shadow-neon);
+  flex-shrink: 0;
+}
+
+.logo-wrapper svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.subtitle {
+  font-size: 10px;
+}
+
+.version-badge {
+  background: var(--color-glass);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 9px;
+  border: 1px solid var(--color-border);
+}
+
+/* Main Card */
+.status-card {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.status-row {
+  align-items: center;
+}
+
+.status-text {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.3); /* Subtle neon text glow */
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+}
+
+.info-row {
+  align-items: center;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px; /* Forces long domain names to truncate with ... */
+  text-align: right;
+}
+
+.count-badge {
+  background: var(--color-glass);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* Footer Action */
+.popup-footer {
+  /* Pull it slightly closer to the card */
+  margin-top: calc(var(--spacing-lg) * -0.2); 
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

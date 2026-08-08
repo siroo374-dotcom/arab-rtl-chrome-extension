@@ -1,0 +1,34 @@
+/**
+ * @file styles.css
+ * @description Core styles injected into web pages.
+ * Applies RTL direction, mixed text fixes, and custom typography.
+ */
+
+/* 1. RTL Direction and Alignment */
+.arab-rtl-direction {
+  direction: rtl !important;
+  text-align: start !important; /* 'start' adapts dynamically based on direction */
+}
+
+/* 2. Custom Typography */
+/* Alexandria font adds significant aesthetic value and readability to the application */
+.arab-rtl-font-alexandria {
+  font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  line-height: 1.75 !important; /* Taller line-height prevents Arabic diacritics from clipping */
+  letter-spacing: 0 !important; /* Prevents unnatural spacing in connected Arabic characters */
+}
+
+/* 3. Mixed Text BiDi Fix */
+/* Isolates the text direction to prevent English words from breaking the Arabic sentence structure */
+.arab-rtl-mixed-text {
+  unicode-bidi: isolate !important;
+}
+
+/* 4. Safeguard for isolated inline elements (like English links inside Arabic text) */
+.arab-rtl-direction a[dir="ltr"],
+.arab-rtl-direction span[dir="ltr"],
+.arab-rtl-direction strong[dir="ltr"] {
+  display: inline-block !important; /* Ensures the isolation works correctly visually */
+  margin-left: 0.2em !important;
+  margin-right: 0.2em !important;
+}

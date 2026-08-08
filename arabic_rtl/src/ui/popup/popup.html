@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arab RTL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/design-system.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    
+    <!-- Header Section -->
+    <header class="popup-header">
+      <div class="logo-wrapper" id="logo-container">
+        <!-- Logo SVG will be injected here dynamically -->
+      </div>
+      <div class="header-text">
+        <h1 class="text-title flex-row gap-sm">
+          Arab RTL 
+          <span class="version-badge text-muted">v1.0.0</span>
+        </h1>
+        <p class="text-muted subtitle">Automatic Arabic Reading Assistant</p>
+      </div>
+    </header>
+
+    <!-- Main Status Card (Glassmorphism) -->
+    <main class="glass-panel status-card">
+      <!-- Active Protection Status -->
+      <div class="status-row flex-row gap-sm">
+        <div class="status-dot"></div>
+        <span class="text-body status-text">Protection Active</span>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <!-- Current Website -->
+      <div class="info-row flex-row space-between">
+        <span class="text-muted">Current Website</span>
+        <span class="text-body truncate" id="current-site">Detecting...</span>
+      </div>
+      
+      <!-- Stats -->
+      <div class="info-row flex-row space-between">
+        <span class="text-muted">Improved Elements</span>
+        <span class="text-body count-badge" id="improved-count">Active</span>
+      </div>
+    </main>
+
+    <!-- Footer Action -->
+    <footer class="popup-footer">
+      <button id="settings-btn" class="btn btn-primary full-width flex-row gap-sm">
+        <span class="btn-icon-wrapper" id="settings-icon"></span>
+        Settings
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- Scripts loaded at the end for performance -->
+  <script src="../shared/icons.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
