@@ -1,2 +1,31 @@
-# arab-rtl-chrome-extension
-A smart Chrome extension for perfect Arabic RTL text reading. إضافة ذكية لتحسين قراءة النصوص
+# Arab RTL - Chrome Extension 🌍
+
+إضافة احترافية لمتصفح Google Chrome مصممة خصيصاً لتحسين تجربة قراءة النصوص العربية والمختلطة (عربي/إنجليزي) على الويب. تتميز الإضافة بتصميم أنيق مستوحى من أنظمة Apple (Glassmorphism) وتستخدم خط **Alexandria** لتوفير أقصى درجات الراحة للعين.
+
+A sleek and powerful Google Chrome extension designed to automatically correct Arabic text direction (RTL), fix mixed text layout issues, and enhance typography using the Alexandria font.
+
+## ✨ المميزات الأساسية (Features)
+
+* **ضبط الاتجاه التلقائي (RTL):** تحويل النصوص العربية لتُقرأ من اليمين إلى اليسار بشكل صحيح.
+* **تصحيح النصوص المختلطة (Mixed Text Fixer):** حل مشكلة تداخل الكلمات الإنجليزية والأرقام داخل الجمل العربية بفضل محرك BiDi متطور، لتبقى الأقواس وعلامات الترقيم في مكانها الهندسي الصحيح.
+* **تحسين علامات الترقيم (Punctuation):** تحويل الفواصل وعلامات الاستفهام اللاتينية إلى شكلها العربي الصحيح (`،` و `؟`).
+* **خط Alexandria:** استبدال الخطوط الافتراضية للمواقع بخط Alexandria الراقي لزيادة وضوح وجمالية النص.
+* **واجهة مستخدم احترافية (Premium UI):** قائمة إعدادات متكاملة بتصميم زجاجي (Dark Theme) تتيح لك التحكم الكامل وتفعيل أو تعطيل أي ميزة بضغطة زر.
+
+## 🚀 طريقة التثبيت للتشغيل المحلي (Installation)
+
+1. قم بتنزيل ملفات هذا المشروع (عبر زر `Code` ثم `Download ZIP`) وفك الضغط عن المجلد.
+2. افتح متصفح Google Chrome وانتقل إلى صفحة الإضافات عبر الرابط: `chrome://extensions/`
+3. قم بتفعيل **"وضع المطور" (Developer mode)** من أعلى الصفحة.
+4. اضغط على زر **"Load unpacked"**.
+5. اختر مجلد المشروع الذي يحتوي على ملف `manifest.json`.
+6. تم التثبيت! ستعمل الإضافة تلقائياً على المواقع لدعم النصوص العربية.
+
+## 🛠️ التقنيات المستخدمة (Tech Stack)
+
+* **HTML5 & CSS3** (نظام تصميم Design System مخصص يعتمد على Glassmorphism)
+* **JavaScript (Vanilla)** (أداء فائق السرعة بدون مكتبات خارجية، مع استخدام MutationObserver لمراقبة التحديثات الحية)
+* **Chrome Extension API (Manifest V3)**
+
+---
+*تم التطوير لجعل الويب العربي مكاناً أجمل وأكثر قابلية للقراءة.*
